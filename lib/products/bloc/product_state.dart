@@ -5,6 +5,6 @@ class ProductState {
   ProductState({required this.productlist});
 }
 
-final class ProductInitial extends ProductState {
-  ProductInitial({required super.productlist});
+final class Getproducts extends ProductState {
+  Getproducts({required super.productlist});
 }

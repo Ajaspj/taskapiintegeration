@@ -8,12 +8,16 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.all(10),
+    return Container(
+      height: 700,
+      width: 350,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.network(product.image.toString()),
+          Image.network(
+            product.image.toString(),
+            fit: BoxFit.contain,
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
@@ -22,17 +26,38 @@ class ProductCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: EdgeInsets.symmetric(horizontal: 8.0),
             child: Row(
               children: [
                 SizedBox(width: 5),
-                Text('₹${product.price}', style: TextStyle(fontSize: 16)),
+                Container(
+                    width: 80,
+                    height: 40,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.orange),
+                    child: Center(
+                      child: Text('₹${product.price}',
+                          style: TextStyle(fontSize: 16)),
+                    )),
                 Spacer(),
                 SizedBox(width: 5),
-                Text('${product.rating}', style: TextStyle(fontSize: 16)),
+                Container(
+                    width: 150,
+                    height: 40,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.orange),
+                    child: Center(
+                      child: Text('${product.category}',
+                          style: TextStyle(fontSize: 16)),
+                    )),
               ],
             ),
           ),
+          SizedBox(
+            height: 10,
+          )
         ],
       ),
     );

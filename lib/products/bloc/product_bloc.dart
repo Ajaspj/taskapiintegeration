@@ -6,7 +6,7 @@ part 'product_event.dart';
 part 'product_state.dart';
 
 class ProductBloc extends Bloc<ProductEvent, ProductState> {
-  ProductBloc() : super(ProductInitial(productlist: [])) {
+  ProductBloc() : super(Getproducts(productlist: [])) {
     on<ProductEvent>((event, emit) async {
       Apiservice apiService = Apiservice();
       var list = await apiService.fetchData();
